@@ -1,0 +1,39 @@
+.header {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 1em auto;
+    width: 100%;
+    text-align:center;
+}
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    margin: 1em auto;
+    width: 40%;
+}
+.label {
+    margin: 1em auto;
+    width: 49%;
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    width:100%;
+}
+.table__header {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.table {
+    border-collapse: collapse;
+    border-spacing: 0.5rem;
+    margin: 2rem auto;
+    text-align: center;
+    width: 80vw;
+}
+.header__cell,
+.body__cell {
+    border: 1px solid #ece7ee;
+    padding: 0.5rem;
+}

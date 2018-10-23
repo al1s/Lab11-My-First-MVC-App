@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Lab11_MVC_App.Models.PersonOfYear>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Time magazine person of the year</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Oswald:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+    <h1 class="header">Time's person of the year</h1>
+    <table class="table">
+        <thead class="table__header">
+            <tr>
+                <th class="header__cell">Year</th>
+                <th class="header__cell">Honor</th>
+                <th class="header__cell">Name</th>
+                <th class="header__cell">Country</th>
+                <th class="header__cell">Birth Year</th>
+                <th class="header__cell">Death Year</th>
+                <th class="header__cell">Title</th>
+                <th class="header__cell">Category</th>
+                <th class="header__cell">Context</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td class="body__cell">@person.Year</td>
+                    <td class="body__cell">@person.Honor</td>
+                    <td class="body__cell">@person.Name</td>
+                    <td class="body__cell">@person.Country</td>
+                    @if (person.Birth_Year == 0)
+                    {
+                        <td class="body__cell">-</td>
+                    }
+                    else
+                    {
+                        <td class="body__cell">@person.Birth_Year</td>
+                    }
+                    @if (person.DeathYear == 0)
+                    {
+                        <td class="body__cell">-</td>
+                    }
+                    else
+                    {
+                        <td class="body__cell">@person.DeathYear</td>
+                    }
+                    <td class="body__cell">@person.Title</td>
+                    <td class="body__cell">@person.Category</td>
+                    <td class="body__cell">@person.Context</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
