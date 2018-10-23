@@ -9,50 +9,52 @@
     <title>Time magazine person of the year</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Oswald:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
 <body>
+    <h1 class="header">Time's person of the year</h1>
     <table class="table">
-        <thead>
+        <thead class="table__header">
             <tr>
-                <th>Year</th>
-                <th>Honor</th>
-                <th>Name</th>
-                <th>Country</th>
-                <th>Birth Year</th>
-                <th>Death Year</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Context</th>
+                <th class="header__cell">Year</th>
+                <th class="header__cell">Honor</th>
+                <th class="header__cell">Name</th>
+                <th class="header__cell">Country</th>
+                <th class="header__cell">Birth Year</th>
+                <th class="header__cell">Death Year</th>
+                <th class="header__cell">Title</th>
+                <th class="header__cell">Category</th>
+                <th class="header__cell">Context</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var person in Model)
             {
                 <tr>
-                    <td>@person.Year</td>
-                    <td>@person.Honor</td>
-                    <td>@person.Name</td>
-                    <td>@person.Country</td>
+                    <td class="body__cell">@person.Year</td>
+                    <td class="body__cell">@person.Honor</td>
+                    <td class="body__cell">@person.Name</td>
+                    <td class="body__cell">@person.Country</td>
                     @if (person.Birth_Year == 0)
                     {
-                        <td>-</td>
+                        <td class="body__cell">-</td>
                     }
                     else
                     {
-                        <td>@person.Birth_Year</td>
+                        <td class="body__cell">@person.Birth_Year</td>
                     }
                     @if (person.DeathYear == 0)
                     {
-                        <td>-</td>
+                        <td class="body__cell">-</td>
                     }
                     else
                     {
-                        <td>@person.DeathYear</td>
+                        <td class="body__cell">@person.DeathYear</td>
                     }
-                    <td>@person.Title</td>
-                    <td>@person.Category</td>
-                    <td>@person.Context</td>
+                    <td class="body__cell">@person.Title</td>
+                    <td class="body__cell">@person.Category</td>
+                    <td class="body__cell">@person.Context</td>
                 </tr>
             }
         </tbody>
